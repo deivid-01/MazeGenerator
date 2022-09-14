@@ -155,8 +155,11 @@ public class GridGenerator : MonoBehaviour
     }
     void StartMaze()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+     
+        if (Input.GetKeyDown(KeyCode.Return))
         {
+            if (startMaze)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //Disable Input
             input.SetActive(false);
             //Read Values
@@ -176,7 +179,7 @@ public class GridGenerator : MonoBehaviour
             SetCameraPositions();
             sherlockAnimation.SetActive(false);
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             startMaze = true;
         }
@@ -438,7 +441,7 @@ public class GridGenerator : MonoBehaviour
         else if (Input.GetMouseButtonDown(1)) // Next Slide
         {
             //Active Slide Panel 
-            endSlide.SetActive(true);
+          //  endSlide.SetActive(true);
         }
         else
             hold = 0;
